@@ -1,0 +1,73 @@
+# Logs
+logs/
+*.log
+*.log.*
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Compiled class files
+*.class
+
+# Maven specific
+.mvn/
+.mvn/wrapper/maven-wrapper.properties
+dependency-reduced-pom.xml
+
+# Spring Boot specific
+*.jar
+*.war
+*.ear
+
+# IDE specific
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Test reports
+test-output/
+surefire-reports/
+failsafe-reports/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.old
+
+# Environment files
+.env
+
+# IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Build directories
+target/
+build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# VS Code
+.vscode/
+
+# STS
+.apt_generated
+.springBeans
+.sts4-cache

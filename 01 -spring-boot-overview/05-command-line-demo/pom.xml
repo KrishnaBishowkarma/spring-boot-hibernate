@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>np.com.krishna-bk</groupId>
-    <artifactId>spring-boot-hibernate</artifactId>
+    <artifactId>mycoolapp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-hibernate</name>
-    <description>spring-boot-hibernate</description>
+    <name>My Cool App</name>
+    <description>My Cool Application</description>
     <url/>
     <licenses>
         <license/>

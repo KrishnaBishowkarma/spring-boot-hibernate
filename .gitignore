@@ -1,73 +1,109 @@
-# Logs
-logs/
-*.log
-*.log.*
+# ========== JAVA ==========
 
-# Temporary files
-*.tmp
-*.swp
-*.swo
-
-# Compiled class files
 *.class
-
-# Maven specific
-.mvn/
-.mvn/wrapper/maven-wrapper.properties
-dependency-reduced-pom.xml
-
-# Spring Boot specific
 *.jar
 *.war
 *.ear
-
-# IDE specific
-.idea/
-*.iws
 *.iml
 *.ipr
-
-# Test reports
-test-output/
-surefire-reports/
-failsafe-reports/
-
-# Operating system files
-.DS_Store
-Thumbs.db
-
-# Backup files
+*.iws
+*.log
+*.tmp
 *.bak
 *.old
+*.swp
+*.swo
+*.rej
 
-# Environment files
-.env
+# ========== BUILD DIRECTORIES ==========
 
-# IntelliJ IDEA
-.idea
-*.iws
+target/
+build/
+out/
+bin/
+
+# Allow target/build folders inside src
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ========== MAVEN & SPRING BOOT ==========
+
+.mvn/
+.mvn/wrapper/maven-wrapper.properties
+HELP.md
+dependency-reduced-pom.xml
+
+# ========== OS FILES ==========
+
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ========== IDEs ==========
+
+# IntelliJ
+.idea/
 *.iml
 *.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
 
 # NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
-/.nb-gradle/
+.nb-gradle/
 
-# Build directories
-target/
+# Spring Tools Suite (STS)
+.apt_generated/
+.springBeans/
+.sts4-cache/
+
+# ========== ENV & CREDENTIALS ==========
+
+.env
+.env.local
+*.key
+*.pem
+*.crt
+*.p12
+
+# ========== LOGS & TEST REPORTS ==========
+
+logs/
+*.log
+*.log.*
+test-output/
+surefire-reports/
+failsafe-reports/
+
+# ========== GRADLE (if present) ==========
+
+.gradle/
 build/
-!**/src/main/**/target/
-!**/src/test/**/target/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-# VS Code
-.vscode/
+# ========== WINDOWS FILES ==========
 
-# STS
-.apt_generated
-.springBeans
-.sts4-cache
+*.lnk
+ehthumbs.db
+Thumbs.db
+
+# ========== MAC FILES ==========
+
+*.DS_Store
+
+# ========== Linux Files ==========
+
+*~
+.cache/

@@ -1,109 +1,108 @@
-# ========== JAVA ==========
-
-*.class
-*.jar
-*.war
-*.ear
-*.iml
-*.ipr
-*.iws
-*.log
-*.tmp
-*.bak
-*.old
-*.swp
-*.swo
-*.rej
-
-# ========== BUILD DIRECTORIES ==========
-
-target/
-build/
-out/
-bin/
-
-# Allow target/build folders inside src
-!**/src/main/**/target/
-!**/src/test/**/target/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-# ========== MAVEN & SPRING BOOT ==========
-
-.mvn/
-.mvn/wrapper/maven-wrapper.properties
-HELP.md
-dependency-reduced-pom.xml
-
-# ========== OS FILES ==========
-
+# === OS Specific ===
 .DS_Store
 Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-# ========== IDEs ==========
+# === Java Compilation ===
+*.class
+*.jar
+*.war
+*.ear
+
+# === Maven ===
+target/
+build/
+dependency-reduced-pom.xml
+release.properties
+buildNumber.properties
+
+# Maven Wrapper
+.mvn/
+!**/.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+
+# === Logs & Temporary Files ===
+logs/
+*.log
+*.tmp
+*.swp
+*.swo
+
+# === Spring Boot Specific ===
+*.db
+*.h2.db
+*.mv.db
+*.trace.db
+*.pid
+*.exec
+*.iml
+
+# === IDEs ===
 
 # IntelliJ
 .idea/
+*.iws
 *.iml
 *.ipr
-*.iws
+out/
 
 # VS Code
 .vscode/
-
-# Eclipse
-.project
-.classpath
-.settings/
 
 # NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
-.nb-gradle/
+/.nb-gradle/
 
-# Spring Tools Suite (STS)
-.apt_generated/
-.springBeans/
-.sts4-cache/
+# STS
+.apt_generated
+.springBeans
+.sts4-cache
 
-# ========== ENV & CREDENTIALS ==========
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
 
-.env
-.env.local
-*.key
-*.pem
-*.crt
-*.p12
-
-# ========== LOGS & TEST REPORTS ==========
-
-logs/
-*.log
-*.log.*
+# === Test Reports ===
 test-output/
 surefire-reports/
 failsafe-reports/
 
-# ========== GRADLE (if present) ==========
+# === Environment/Secrets ===
+.env
+.env.*
+*.env.local
+application-dev.yml
+application-dev.properties
 
-.gradle/
+# === Files to ignore globally in subprojects ===
+**/HELP.md
+**/README.md
+**/target/
+**/build/
+**/.idea/
+**/*.iml
+**/.classpath
+**/.project
+**/.settings/
+**/.vscode/
+
+# === Node-related (if frontend added later) ===
+node_modules/
+dist/
 build/
 
-# ========== WINDOWS FILES ==========
+# === Backup/Editor junk ===
+*.bak
+*.old
+*.orig
+*.rej
 
-*.lnk
-ehthumbs.db
-Thumbs.db
-
-# ========== MAC FILES ==========
-
-*.DS_Store
-
-# ========== Linux Files ==========
-
-*~
-.cache/
+# === Custom generated files ===
+*.generated.*

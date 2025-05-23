@@ -1,4 +1,4 @@
-package np.com.krishnabk.springcoredemo.common;
+package np.com.krishnabk.util;
 
 import org.springframework.stereotype.Component;
 

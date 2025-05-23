@@ -1,6 +1,6 @@
 package np.com.krishnabk.springcoredemo.rest;
 
-import np.com.krishnabk.springcoredemo.common.Coach;
+import np.com.krishnabk.util.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

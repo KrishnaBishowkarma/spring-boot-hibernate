@@ -11,8 +11,8 @@
     <groupId>np.com.krishna-bk</groupId>
     <artifactId>springcoredemo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>01-constructor-injection</name>
-    <description>01-constructor-injection</description>
+    <name>03-setter-injection</name>
+    <description>03-setter-injection</description>
     <url/>
     <licenses>
         <license/>

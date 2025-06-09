@@ -21,19 +21,18 @@ public class CruddemoApplication {
         };
     }
 
-    private void createStudent(StudentDAO studentDAO){
+    private void createStudent(StudentDAO studentDAO) {
 
         // create the student object
-        System.out.println("Creating new object ...");
-        Student tempStudent = new Student("Paul", "Doe", "paul@gmail.com");
+        System.out.println("Creating new student object ...");
+        Student tempStudent = new Student("John", "Saud", "john@gmail.com");
 
         // save the student object
         System.out.println("Saving the student ...");
         studentDAO.save(tempStudent);
 
-        //display id of the saved student
-        System.out.println("Saved Student. Generated ID: " + tempStudent.getId());
-
+        // display id of the saved student
+        System.out.println("Saved student. Generated ID: " + tempStudent.getId());
     }
 
 }

@@ -43,6 +43,7 @@ public class CruddemoApplication {
         // change first name to "Ram"
         System.out.println("Updating student ...");
         theStudent.setFirstName("Ram");
+        theStudent.setEmail("ram@krishna-bk.com.np");
 
         // update the student
         studentDAO.update(theStudent);

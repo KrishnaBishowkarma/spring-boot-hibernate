@@ -1,5 +1,6 @@
 package np.com.krishnabk.demo.rest;
 
+import jakarta.annotation.PostConstruct;
 import np.com.krishnabk.demo.entity.Student;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,15 +13,22 @@ import java.util.List;
 @RequestMapping("/api")
 public class StudentRestController {
 
-    // define endpoint for "/students" - return a list of students
-    @GetMapping("/students")
-    public List<Student> getStudents(){
+    private List<Student> theStudents;
 
-        List<Student> theStudents = new ArrayList<>();
+    // define @PostConstruct to load the student data ... Only Once!
+
+    @PostConstruct
+    public void loadData(){
+        theStudents = new ArrayList<>();
 
         theStudents.add(new Student("Poornima", "Patel"));
         theStudents.add(new Student("Riyanshi", "Bishowkarma"));
         theStudents.add(new Student("Nirmal", "BK"));
+    }
+
+    // define endpoint for "/students" - return a list of students
+    @GetMapping("/students")
+    public List<Student> getStudents(){
 
         return theStudents;
     }

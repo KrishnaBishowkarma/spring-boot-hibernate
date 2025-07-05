@@ -1,4 +1,4 @@
-package np.com.krishnabk.demo.rest;
+package np.com.krishnabk.demo.exceptions;
 
 public class StudentErrorResponse {
 

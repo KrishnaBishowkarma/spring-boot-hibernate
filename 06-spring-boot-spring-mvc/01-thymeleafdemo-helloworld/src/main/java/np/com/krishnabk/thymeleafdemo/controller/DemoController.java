@@ -9,7 +9,7 @@ public class DemoController {
 
     // create mapping for "/hello"
 
-    @GetMapping("/api/hello")
+    @GetMapping("/hello")
     public String sayHello(Model theModel){
 
         theModel.addAttribute("theDate", java.time.LocalDateTime.now());

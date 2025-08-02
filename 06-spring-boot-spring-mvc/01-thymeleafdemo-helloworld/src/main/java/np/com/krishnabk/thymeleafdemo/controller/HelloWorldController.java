@@ -29,7 +29,10 @@ public class HelloWorldController {
         // read the request parameter from the HTML form
         String theName = request.getParameter("studentName");
 
-        // convert data to all caps
+        // convert data to all caps, handle null value
+        if (theName == null) {
+            theName = "";
+        }
         theName = theName.toUpperCase();
 
         // create the message

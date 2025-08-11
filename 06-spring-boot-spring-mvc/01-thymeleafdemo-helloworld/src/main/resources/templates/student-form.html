@@ -16,18 +16,16 @@
 
     <br><br>
 
-    Country:
-    <select th:field="*{country}">
-        <option th:value="Nepal">Nepal</option>
-        <option th:value="India">India</option>
-        <option th:value="Brazil">Brazil</option>
-        <option th:value="Bhutan">Bhutan</option>
-        <option th:value="Indonesia">Indonesia</option>
-    </select>
+    Last name: <input type="text" th:field="*{lastName}">
 
     <br><br>
 
-    Last name: <input type="text" th:field="*{lastName}">
+    Country:
+    <select th:field="*{country}">
+
+        <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"></option>
+
+    </select>
 
     <br><br>
 

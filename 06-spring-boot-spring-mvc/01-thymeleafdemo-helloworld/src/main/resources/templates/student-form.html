@@ -29,7 +29,7 @@
 
     <br><br>
 
-    Favourite Programming Language:
+    Favorite Programming Language:
 
     <input type="radio" th:field="*{favoriteLanguage}"
                         th:each="tempLang : ${languages}"
@@ -39,7 +39,7 @@
 
     <br><br>
 
-    Favourite Operating Systems:
+    Favorite Operating Systems:
     <input type="checkbox" th:field="*{favoriteSystems}"
                            th:each="tempSystem : ${systems}"
                            th:value="${tempSystem}"

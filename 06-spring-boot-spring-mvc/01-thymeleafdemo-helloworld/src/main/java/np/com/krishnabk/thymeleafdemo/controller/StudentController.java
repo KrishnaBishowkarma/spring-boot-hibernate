@@ -52,11 +52,8 @@ public class StudentController {
         System.out.println("country: " + theStudent.getCountry());
 
         System.out.println("favProgrammingLanguage: " + theStudent.getFavoriteLanguage());
-<<<<<<< HEAD
 
         System.out.println("favSystem: " + theStudent.getFavoriteSystems());
-=======
->>>>>>> a8eb264c86ad71345329f095df13297e83faa0c6
 
         return "student-confirmation";
     }

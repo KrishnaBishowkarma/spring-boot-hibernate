@@ -31,18 +31,11 @@
 
     Favourite Programming Language:
 
-    <label>
-        <input type="radio" th:field="*{favoriteLanguage}" th:value="Go"> Go
-    </label>
-    <label>
-        <input type="radio" th:field="*{favoriteLanguage}" th:value="Java"> Java
-    </label>
-    <label>
-        <input type="radio" th:field="*{favoriteLanguage}" th:value="Python"> Python
-    </label>
-    <label>
-        <input type="radio" th:field="*{favoriteLanguage}" th:value="CPP"> CPP
-    </label>
+    <input type="radio" th:field="*{favoriteLanguage}"
+                            th:each="tempLang : ${languages}"
+                            th:value="${tempLang}"
+                            th:text="${tempLang}"
+    />
 
 
     <br><br>

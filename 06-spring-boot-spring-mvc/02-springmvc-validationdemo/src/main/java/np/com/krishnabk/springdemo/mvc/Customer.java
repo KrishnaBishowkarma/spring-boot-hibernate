@@ -19,7 +19,7 @@ public class Customer {
     @Size(min = 1, message = "is required")
     private String lastName;
 
-    @CourseCode
+    @CourseCode(value = "TOPS", message = "must start with TOPS")
     private String courseCode;
 
     public String getCourseCode() {

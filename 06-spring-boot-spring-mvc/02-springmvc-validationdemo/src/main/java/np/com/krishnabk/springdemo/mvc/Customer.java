@@ -1,6 +1,7 @@
 package np.com.krishnabk.springdemo.mvc;
 
 import jakarta.validation.constraints.*;
+import np.com.krishnabk.springdemo.mvc.validation.CourseCode;
 
 public class Customer {
 
@@ -17,6 +18,17 @@ public class Customer {
     @NotNull(message = "is required")
     @Size(min = 1, message = "is required")
     private String lastName;
+
+    @CourseCode(value = "TOPS", message = "must start with TOPS")
+    private String courseCode;
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
 
     public String getFirstName() {
         return firstName;

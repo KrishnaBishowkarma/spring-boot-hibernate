@@ -1,4 +1,4 @@
-package np.com.krishnabk.employeecrud.entity;
+package np.com.krishnabk.springboot.thymeleafdemo.entity;
 
 import jakarta.persistence.*;
 

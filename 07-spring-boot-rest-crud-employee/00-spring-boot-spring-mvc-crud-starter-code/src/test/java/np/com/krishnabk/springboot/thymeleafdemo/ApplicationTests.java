@@ -1,4 +1,4 @@
-package np.com.krishnabk.employeecrud;
+package np.com.krishnabk.springboot.thymeleafdemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

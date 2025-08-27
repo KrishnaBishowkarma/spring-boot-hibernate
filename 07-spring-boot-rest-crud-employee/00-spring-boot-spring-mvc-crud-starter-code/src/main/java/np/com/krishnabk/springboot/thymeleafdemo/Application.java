@@ -1,4 +1,4 @@
-package np.com.krishnabk.employeecrud;
+package np.com.krishnabk.springboot.thymeleafdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

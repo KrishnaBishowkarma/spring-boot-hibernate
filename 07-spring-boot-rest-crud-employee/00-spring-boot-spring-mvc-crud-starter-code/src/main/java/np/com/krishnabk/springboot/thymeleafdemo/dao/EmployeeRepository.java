@@ -1,6 +1,6 @@
-package np.com.krishnabk.employeecrud.dao;
+package np.com.krishnabk.springboot.thymeleafdemo.dao;
 
-import np.com.krishnabk.employeecrud.entity.Employee;
+import np.com.krishnabk.springboot.thymeleafdemo.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {

@@ -1,6 +1,6 @@
-package np.com.krishnabk.employeecrud.service;
+package np.com.krishnabk.springboot.thymeleafdemo.service;
 
-import np.com.krishnabk.employeecrud.entity.Employee;
+import np.com.krishnabk.springboot.thymeleafdemo.entity.Employee;
 
 import java.util.List;
 

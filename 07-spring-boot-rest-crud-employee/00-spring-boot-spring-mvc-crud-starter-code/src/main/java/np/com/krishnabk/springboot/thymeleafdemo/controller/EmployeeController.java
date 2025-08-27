@@ -1,7 +1,7 @@
-package np.com.krishnabk.employeecrud.controller;
+package np.com.krishnabk.springboot.thymeleafdemo.controller;
 
-import np.com.krishnabk.employeecrud.entity.Employee;
-import np.com.krishnabk.employeecrud.service.EmployeeService;
+import np.com.krishnabk.springboot.thymeleafdemo.entity.Employee;
+import np.com.krishnabk.springboot.thymeleafdemo.service.EmployeeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>KrishnaKompany Home Page</title>
+    <style>
+        input {
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: rgba(147, 216, 255, 0.75);
+            padding: 8px;
+
+        }
+    </style>
 </head>
 <body>
 
-    <h2>KrishnaKompany Home Page</h2>
-    <hr>
+<h2>KrishnaKompany Home Page</h2>
+<hr>
 
-    Welcome to the KrishnaKompany home page!
+<p>Welcome to the KrishnaKompany home page!</p>
 
+<!-- Add a logout button-->
+<form action="#" method="POST" th:action="@{/logout}">
+    <input type="submit" value="Log Out">
+</form>
 </body>
 </html>

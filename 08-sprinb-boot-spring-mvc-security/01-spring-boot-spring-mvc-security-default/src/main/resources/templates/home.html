@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>KrishnaKompany Home Page</title>
@@ -22,6 +23,16 @@
 
 <p>Welcome to the KrishnaKompany home page!</p>
 
+<hr>
+
+<!-- Display user name and role -->
+<p>
+    User: <span sec:authentication="principal.username"></span>
+    <br><br>
+    Role: <span sec:authentication="principal.authorities"></span>
+</p>
+
+<hr>
 <!-- Add a logout button-->
 <form action="#" method="POST" th:action="@{/logout}">
     <input type="submit" value="Log Out">

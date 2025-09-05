@@ -7,8 +7,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class DemoController {
 
     @GetMapping("/")
-    public String showForm(){
+    public String showForm() {
 
         return "home";
+    }
+
+    @GetMapping("/leaders")
+    public String showLeaders() {
+
+        return "leaders";
+    }
+
+    // add mapping for /systems
+    @GetMapping("/systems")
+    public String showSystems() {
+
+        return "systems";
     }
 }

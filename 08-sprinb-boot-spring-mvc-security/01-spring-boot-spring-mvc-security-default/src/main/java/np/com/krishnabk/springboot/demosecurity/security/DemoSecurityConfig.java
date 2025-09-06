@@ -3,36 +3,20 @@ package np.com.krishnabk.springboot.demosecurity.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class DemoSecurityConfig {
 
+    // add support for JDBC ... no more hard coded users
     @Bean
-    public InMemoryUserDetailsManager userDetailsManager() {
+    public UserDetailsManager userDetailsManager(DataSource dataSource) {
 
-        UserDetails john = User.builder()
-                .username("John")
-                .password("{noop}test123")
-                .roles("EMPLOYEE")
-                .build();
-
-        UserDetails mary = User.builder()
-                .username("Mary")
-                .password("{noop}test123")
-                .roles("EMPLOYEE", "MANAGER")
-                .build();
-
-        UserDetails riya = User.builder()
-                .username("Riya")
-                .password("{noop}test123")
-                .roles("EMPLOYEE", "MANAGER", "ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(john, mary, riya);
+        return new JdbcUserDetailsManager(dataSource);
     }
 
     @Bean
@@ -56,5 +40,4 @@ public class DemoSecurityConfig {
                         .accessDeniedPage("/access-denied"));
         return http.build();
     }
-
 }

@@ -1,5 +1,8 @@
 package np.com.krishnabk.cruddemo;
 
+import np.com.krishnabk.cruddemo.dao.AppDAO;
+import np.com.krishnabk.cruddemo.entity.Instructor;
+import np.com.krishnabk.cruddemo.entity.InstructorDetail;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,10 +16,33 @@ public class Application {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(String[] args){
+    public CommandLineRunner commandLineRunner(AppDAO appDAO){
 
         return runner -> {
-            System.out.println("Hello, World!");
+            createInstructor(appDAO);
         };
     }
+
+    private void createInstructor(AppDAO appDAO) {
+
+        // create the instructor
+        Instructor tempInstructor = new Instructor(
+                "Krishna", "Bishowkarma", "hi@krishna-bk.com.np"
+        );
+
+        // create the instructor detail
+        InstructorDetail tempInstructorDetail = new InstructorDetail(
+                "https://www.youtube.com/@krishnabkarma","Filmmaking"
+        );
+
+        // associate the objects
+        tempInstructor.setInstructorDetail(tempInstructorDetail);
+
+        // save the objects
+        // NOTE: this will also save the details object because of CascadeType.ALL
+        System.out.println("Saving Instructor: " + tempInstructor);
+        appDAO.save(tempInstructor);
+        System.out.println("Done!");
+    }
+
 }

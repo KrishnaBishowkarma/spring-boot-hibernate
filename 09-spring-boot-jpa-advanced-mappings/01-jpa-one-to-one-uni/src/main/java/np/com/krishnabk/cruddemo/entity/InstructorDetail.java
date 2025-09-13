@@ -60,7 +60,7 @@ public class InstructorDetail {
     // step 6. generate toString() method
 
     @Override
-    public String  toString() {
+    public String toString() {
         return "InstructorDetail{" +
                 "id=" + id +
                 ", youtubeChannel='" + youtubeChannel + '\'' +

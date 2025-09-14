@@ -43,7 +43,11 @@ public class Application {
         Instructor tempInstructor  = appDAO.findInstructorById(theId);
 
         System.out.println("tempInstructor: " + tempInstructor);
-        System.out.println("the associated instructorDetail only: " + tempInstructor.getInstructorDetail());
+        if (tempInstructor != null) {
+            System.out.println("the associated instructorDetail only: " + tempInstructor.getInstructorDetail());
+        } else {
+            System.out.println("Instructor not found with id: " + theId);
+        }
     }
 
     private void createInstructor(AppDAO appDAO) {

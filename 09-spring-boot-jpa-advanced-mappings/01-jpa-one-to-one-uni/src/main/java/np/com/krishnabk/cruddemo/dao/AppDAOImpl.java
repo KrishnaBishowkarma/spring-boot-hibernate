@@ -37,8 +37,10 @@ public class AppDAOImpl implements AppDAO{
         // retrieve the instructor
         Instructor tempInstructor = entityManager.find(Instructor.class, theId);
 
-        // delete the instructor
-        entityManager.remove(tempInstructor);
+        // delete the instructor if found
+        if (tempInstructor != null) {
+            entityManager.remove(tempInstructor);
+        }
     }
 
 }

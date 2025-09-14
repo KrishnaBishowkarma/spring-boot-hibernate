@@ -19,8 +19,35 @@ public class Application {
     public CommandLineRunner commandLineRunner(AppDAO appDAO){
 
         return runner -> {
-            createInstructor(appDAO);
+//            createInstructor(appDAO);
+//            findInstructor(appDAO);
+            deleteInstructor(appDAO);
+
         };
+    }
+
+    private void deleteInstructor(AppDAO appDAO) {
+
+        int theId = 1;
+        System.out.println("Deleting instructor id: " + theId);
+
+        appDAO.deleteInstructorById(theId);
+
+        System.out.println("Done!");
+    }
+
+    private void findInstructor(AppDAO appDAO) {
+        int theId = 1;
+        System.out.println("Finding Instructor id: " + theId);
+
+        Instructor tempInstructor  = appDAO.findInstructorById(theId);
+
+        System.out.println("tempInstructor: " + tempInstructor);
+        if (tempInstructor != null) {
+            System.out.println("the associated instructorDetail only: " + tempInstructor.getInstructorDetail());
+        } else {
+            System.out.println("Instructor not found with id: " + theId);
+        }
     }
 
     private void createInstructor(AppDAO appDAO) {

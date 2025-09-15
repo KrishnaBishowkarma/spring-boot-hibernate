@@ -29,7 +29,7 @@ public class Application {
 
     private void deleteInstructorDetail(AppDAO appDAO) {
 
-        int theId = 2;
+        int theId = 3;
         System.out.println("Deleting instructor id: " + theId);
 
         appDAO.deleteInstructorDetailById(theId);

@@ -2,6 +2,7 @@ package np.com.krishnabk.cruddemo.dao;
 
 import jakarta.persistence.EntityManager;
 import np.com.krishnabk.cruddemo.entity.Instructor;
+import np.com.krishnabk.cruddemo.entity.InstructorDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,6 +42,13 @@ public class AppDAOImpl implements AppDAO{
         if (tempInstructor != null) {
             entityManager.remove(tempInstructor);
         }
+    }
+
+    @Override
+    public InstructorDetail findInstructorDetailById(int theId) {
+
+        return entityManager.find(InstructorDetail.class, theId);
+
     }
 
 }

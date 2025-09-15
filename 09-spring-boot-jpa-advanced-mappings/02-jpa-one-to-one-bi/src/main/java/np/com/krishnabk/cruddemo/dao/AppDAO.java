@@ -1,6 +1,7 @@
 package np.com.krishnabk.cruddemo.dao;
 
 import np.com.krishnabk.cruddemo.entity.Instructor;
+import np.com.krishnabk.cruddemo.entity.InstructorDetail;
 
 public interface AppDAO {
 
@@ -9,4 +10,6 @@ public interface AppDAO {
     Instructor findInstructorById(int theId);
 
     void deleteInstructorById(int theId);
+
+    InstructorDetail findInstructorDetailById(int theId);
 }

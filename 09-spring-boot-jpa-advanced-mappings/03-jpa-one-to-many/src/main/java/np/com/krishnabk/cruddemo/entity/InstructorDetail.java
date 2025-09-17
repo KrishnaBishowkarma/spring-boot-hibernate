@@ -1,0 +1,83 @@
+package np.com.krishnabk.cruddemo.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "instructor_detail")
+public class InstructorDetail {
+
+
+    // step 1. annotate the class as an entity and map to db table
+    // step 2. define table fields
+    // step 3. annotate the fields with db column names
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "youtube_channel")
+    private String youtubeChannel;
+
+    @Column(name = "hobby")
+    private String hobby;
+
+    // add @OneToOne annotation
+    @OneToOne(mappedBy = "instructorDetail", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    private Instructor instructor;
+
+
+    // step 4. create constructors
+    public InstructorDetail(){
+
+    }
+
+    public InstructorDetail(String youtubeChannel, String hobby) {
+        this.youtubeChannel = youtubeChannel;
+        this.hobby = hobby;
+    }
+
+    // step 5. generate getters/setters methods
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getYoutubeChannel() {
+        return youtubeChannel;
+    }
+
+    public void setYoutubeChannel(String youtubeChannel) {
+        this.youtubeChannel = youtubeChannel;
+    }
+
+    public String getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
+    }
+
+    // step 6. generate toString() method
+
+    @Override
+    public String toString() {
+        return "InstructorDetail{" +
+                "id=" + id +
+                ", youtubeChannel='" + youtubeChannel + '\'' +
+                ", hobby='" + hobby + '\'' +
+                '}';
+    }
+}

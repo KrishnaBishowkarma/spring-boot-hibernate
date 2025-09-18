@@ -1,6 +1,7 @@
 package np.com.krishnabk.cruddemo;
 
 import np.com.krishnabk.cruddemo.dao.AppDAO;
+import np.com.krishnabk.cruddemo.entity.Course;
 import np.com.krishnabk.cruddemo.entity.Instructor;
 import np.com.krishnabk.cruddemo.entity.InstructorDetail;
 import org.springframework.boot.CommandLineRunner;
@@ -23,8 +24,36 @@ public class Application {
 //            findInstructor(appDAO);
 //            deleteInstructor(appDAO);
 //            findInstructorDetail(appDAO);
-            deleteInstructorDetail(appDAO);
+//            deleteInstructorDetail(appDAO);
+            createInstructorWithCourses(appDAO);
         };
+    }
+
+    private void createInstructorWithCourses(AppDAO appDAO) {
+
+        // create the instructor
+        Instructor tempInstructor =
+                new Instructor("Naresh", "Lohar", "naresh@krishna-bk.com.np");
+
+        // create the instructor detail
+        InstructorDetail tempInstructorDetail =
+                new InstructorDetail("https://www.youtube.com", "Music");
+
+        // create the courses
+        Course tempCourse1 = new Course("Air Guitar - The Ultimate Guide");
+        Course tempCourse2 = new Course("Basic of MUSIC");
+        Course tempCourse3 = new Course("The Pinball Masterclass");
+
+        // add courses to instructor
+        tempInstructor.add(tempCourse1);
+        tempInstructor.add(tempCourse2);
+        tempInstructor.add(tempCourse3);
+
+        // save the instructor
+        System.out.println("Saving instructor: " + tempInstructor);
+        System.out.println("The courses: " + tempInstructor.getCourses());
+        appDAO.save(tempInstructor);
+        System.out.println("DONE!");
     }
 
     private void deleteInstructorDetail(AppDAO appDAO) {

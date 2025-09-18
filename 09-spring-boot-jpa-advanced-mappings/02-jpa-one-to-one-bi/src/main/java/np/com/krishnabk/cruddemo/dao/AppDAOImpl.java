@@ -62,7 +62,9 @@ public class AppDAOImpl implements AppDAO{
 
         // break bi-directional link
 
-        tempInstructorDetail.getInstructor().setInstructorDetail(null);
+        if (tempInstructorDetail != null && tempInstructorDetail.getInstructor() != null) {
+            tempInstructorDetail.getInstructor().setInstructorDetail(null);
+        }
 
         // delete the instructor detail
         if(tempInstructorDetail != null){

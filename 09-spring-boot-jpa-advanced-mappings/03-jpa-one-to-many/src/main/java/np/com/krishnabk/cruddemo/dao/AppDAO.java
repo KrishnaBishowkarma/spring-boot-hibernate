@@ -1,7 +1,10 @@
 package np.com.krishnabk.cruddemo.dao;
 
+import np.com.krishnabk.cruddemo.entity.Course;
 import np.com.krishnabk.cruddemo.entity.Instructor;
 import np.com.krishnabk.cruddemo.entity.InstructorDetail;
+
+import java.util.List;
 
 public interface AppDAO {
 
@@ -14,4 +17,6 @@ public interface AppDAO {
     InstructorDetail findInstructorDetailById(int theId);
 
     void deleteInstructorDetailById(int theId);
+
+    List<Course> findCoursesByInstructor(int theId);
 }

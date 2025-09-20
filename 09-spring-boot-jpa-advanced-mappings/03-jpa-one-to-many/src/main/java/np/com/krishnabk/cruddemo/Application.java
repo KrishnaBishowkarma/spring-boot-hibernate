@@ -25,8 +25,22 @@ public class Application {
 //            deleteInstructor(appDAO);
 //            findInstructorDetail(appDAO);
 //            deleteInstructorDetail(appDAO);
-            createInstructorWithCourses(appDAO);
+//            createInstructorWithCourses(appDAO);
+            findInstructorWithCourses(appDAO);
         };
+    }
+
+    private void findInstructorWithCourses(AppDAO appDAO) {
+
+        int theId = 2;
+        System.out.println("Finding Instructor id: " + theId);
+
+        Instructor tempInstructor = appDAO.findInstructorById(theId);
+
+        System.out.println("tempInstructor: " + tempInstructor);
+        System.out.println("the associated courses: " + tempInstructor.getCourses());
+
+        System.out.println("DONE!");
     }
 
     private void createInstructorWithCourses(AppDAO appDAO) {

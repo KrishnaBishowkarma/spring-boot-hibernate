@@ -1,11 +1,15 @@
 package np.com.krishnabk.cruddemo.dao;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import np.com.krishnabk.cruddemo.entity.Course;
 import np.com.krishnabk.cruddemo.entity.Instructor;
 import np.com.krishnabk.cruddemo.entity.InstructorDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Repository
 public class AppDAOImpl implements AppDAO{
@@ -68,6 +72,21 @@ public class AppDAOImpl implements AppDAO{
         if(tempInstructorDetail != null){
             entityManager.remove(tempInstructorDetail);
         } else System.out.println("Instructor ID not found!");
+    }
+
+    @Override
+    public List<Course> findCoursesByInstructor(int theId) {
+
+        // create query
+        TypedQuery<Course> query = entityManager.createQuery(
+                "from Course where instructor.id = :data", Course.class);
+
+        query.setParameter("data", theId);
+
+        // execute the query
+        List<Course> courses = query.getResultList();
+
+        return courses;
     }
 
 }

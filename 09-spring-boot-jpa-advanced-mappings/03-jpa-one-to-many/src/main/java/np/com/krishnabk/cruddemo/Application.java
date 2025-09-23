@@ -30,8 +30,43 @@ public class Application {
 //            createInstructorWithCourses(appDAO);
 //            findInstructorWithCourses(appDAO);
 //            findCoursesForInstructor(appDAO);
-            findInstructorWithCoursesJoinFetch(appDAO);
+//            findInstructorWithCoursesJoinFetch(appDAO);
+//            updateInstructor(appDAO);
+            updateCourse(appDAO);
         };
+    }
+
+    private void updateCourse(AppDAO appDAO) {
+
+        int theId = 10;
+
+        // find the course
+        System.out.println("Finding the course id: " + theId);
+        Course tempCourse = appDAO.findCourseById(theId);
+
+        // update the course
+        System.out.println("Updating course id: " + theId);
+        tempCourse.setTitle("Enjoy the Simple Things");
+
+        appDAO.update(tempCourse);
+
+        System.out.println("DONE!");
+    }
+
+    private void updateInstructor(AppDAO appDAO) {
+        int theId = 2;
+
+        // find the instructor
+        System.out.println("Finding instructor: " + theId);
+        Instructor tempInstructor = appDAO.findInstructorById(theId);
+
+        // update the instructor
+        System.out.println("Updating instructor id: " + theId);
+        tempInstructor.setLastName("B.K");
+
+        appDAO.update(tempInstructor);
+
+        System.out.println("DONE!");
     }
 
     private void findInstructorWithCoursesJoinFetch(AppDAO appDAO) {

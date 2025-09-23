@@ -21,4 +21,6 @@ public interface AppDAO {
     List<Course> findCoursesByInstructor(int theId);
 
     Instructor findInstructorByIdJoinFetch(int theId);
+
+    void update(Instructor tempInstructor);
 }

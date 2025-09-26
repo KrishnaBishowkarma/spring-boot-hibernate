@@ -32,8 +32,20 @@ public class Application {
 //            findCoursesForInstructor(appDAO);
 //            findInstructorWithCoursesJoinFetch(appDAO);
 //            updateInstructor(appDAO);
-            updateCourse(appDAO);
+//            updateCourse(appDAO);
+            deleteCourse(appDAO);
         };
+    }
+
+    private void deleteCourse(AppDAO appDAO) {
+
+        int theId = 10;
+
+        System.out.println("Deleting course id: " + theId);
+
+        appDAO.deleteCourseById(theId);
+
+        System.out.println("DONE!");
     }
 
     private void updateCourse(AppDAO appDAO) {
@@ -172,7 +184,7 @@ public class Application {
 
     private void deleteInstructor(AppDAO appDAO) {
 
-        int theId = 1;
+        int theId = 2;
         System.out.println("Deleting instructor id: " + theId);
 
         appDAO.deleteInstructorById(theId);

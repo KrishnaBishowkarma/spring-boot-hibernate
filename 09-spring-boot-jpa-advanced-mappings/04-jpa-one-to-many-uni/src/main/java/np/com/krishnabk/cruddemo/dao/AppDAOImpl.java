@@ -158,11 +158,8 @@ public class AppDAOImpl implements AppDAO{
                         + "JOIN FETCH c.reviews "
                         + "where c.id = :data", Course.class);
         query.setParameter("data", theId);
-
-
         // execute query
         Course course = query.getSingleResult();
-
         return course;
     }
 }

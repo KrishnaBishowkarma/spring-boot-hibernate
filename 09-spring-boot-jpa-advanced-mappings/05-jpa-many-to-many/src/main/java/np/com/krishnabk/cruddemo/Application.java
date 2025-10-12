@@ -1,10 +1,7 @@
 package np.com.krishnabk.cruddemo;
 
 import np.com.krishnabk.cruddemo.dao.AppDAO;
-import np.com.krishnabk.cruddemo.entity.Course;
-import np.com.krishnabk.cruddemo.entity.Instructor;
-import np.com.krishnabk.cruddemo.entity.InstructorDetail;
-import np.com.krishnabk.cruddemo.entity.Review;
+import np.com.krishnabk.cruddemo.entity.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,8 +20,30 @@ public class Application {
     public CommandLineRunner commandLineRunner(AppDAO appDAO){
 
         return runner -> {
-
+            createCourseAndStudents(appDAO);
         };
+    }
+
+    private void createCourseAndStudents(AppDAO appDAO) {
+
+        // create course
+        Course tempCourse = new Course("Happy Path");
+
+        // crete the students
+        Student tempStudent1 = new Student("Bipasha", "Kafle", "bipasha@krishna-bk.com.np");
+        Student tempStudent2 = new Student("Bibechana", "Kafle", "bibechana@krishna-bk.com.np");
+
+        // add students to the course
+        tempCourse.addStudent(tempStudent1);
+        tempCourse.addStudent(tempStudent2);
+
+        // save the course and associated course
+        System.out.println("Saving the course: " + tempCourse);
+        System.out.println("associated students: " + tempCourse.getStudents());
+
+        appDAO.save(tempCourse);
+
+        System.out.println("DONE!");
     }
 
     private void deleteCourseAndReviews(AppDAO appDAO) {

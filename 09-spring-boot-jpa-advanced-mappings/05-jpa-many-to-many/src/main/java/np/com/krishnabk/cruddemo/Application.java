@@ -21,8 +21,21 @@ public class Application {
 
         return runner -> {
             //  createCourseAndStudents(appDAO);
-            findCourseAndStudents(appDAO);
+            // findCourseAndStudents(appDAO);
+            findStudentAndCourses(appDAO);
         };
+    }
+
+    private void findStudentAndCourses(AppDAO appDAO) {
+
+        int theId = 1;
+
+        Student tempStudent = appDAO.findStudentAndCourseByStudentId(theId);
+
+        System.out.println("Loaded student: " + tempStudent);
+        System.out.println("Courses: " + tempStudent.getCourses());
+
+        System.out.println("DONE!");
     }
 
     private void findCourseAndStudents(AppDAO appDAO) {

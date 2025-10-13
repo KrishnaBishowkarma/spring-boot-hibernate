@@ -5,6 +5,7 @@ import jakarta.persistence.TypedQuery;
 import np.com.krishnabk.cruddemo.entity.Course;
 import np.com.krishnabk.cruddemo.entity.Instructor;
 import np.com.krishnabk.cruddemo.entity.InstructorDetail;
+import np.com.krishnabk.cruddemo.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -177,5 +178,21 @@ public class AppDAOImpl implements AppDAO{
         Course course = query.getSingleResult();
 
         return course;
+    }
+
+    @Override
+    public Student findStudentAndCourseByStudentId(int theId) {
+
+        // create query
+        TypedQuery<Student> query = entityManager.createQuery(
+                "select s from Student  s "
+                + "JOIN FETCH s.courses "
+                + "where s.id = :data", Student.class);
+        query.setParameter("data", theId);
+
+        // execute query
+        Student student = query.getSingleResult();
+
+        return student;
     }
 }

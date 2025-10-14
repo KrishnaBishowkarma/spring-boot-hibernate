@@ -22,8 +22,31 @@ public class Application {
         return runner -> {
             //  createCourseAndStudents(appDAO);
             // findCourseAndStudents(appDAO);
-            findStudentAndCourses(appDAO);
+            // findStudentAndCourses(appDAO);
+
+            addMoreCoursesForStudents(appDAO);
         };
+    }
+
+    private void addMoreCoursesForStudents(AppDAO appDAO) {
+
+        int theId = 2;
+        Student tempStudent = appDAO.findStudentAndCourseByStudentId(theId);
+
+        // create more courses
+        Course tempCourse1 = new Course("FullStack Java Developer Path");
+        Course tempCourse2 = new Course("Game Development");
+
+        // add courses to students
+        tempStudent.addCourse(tempCourse1);
+        tempStudent.addCourse(tempCourse2);
+
+        System.out.println("Updating student: " + tempStudent);
+        System.out.println("associated courses: " + tempStudent.getCourses());
+
+        appDAO.update(tempStudent);
+
+        System.out.println("DONE!");
     }
 
     private void findStudentAndCourses(AppDAO appDAO) {

@@ -24,7 +24,9 @@ public class Application {
             // findCourseAndStudents(appDAO);
             // findStudentAndCourses(appDAO);
 
-            addMoreCoursesForStudents(appDAO);
+            // addMoreCoursesForStudents(appDAO);
+
+            deleteCourse(appDAO);
         };
     }
 
